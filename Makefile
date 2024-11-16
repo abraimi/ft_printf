@@ -1,21 +1,27 @@
 NAME = libftprintf.a
+BUILDDIR = build
 SRCS = ft_putchar.c ft_putstr.c ft_putnbr.c
-OBJS = $(SRCS:.c=.o)
+OBJS = $(addprefix $(BUILDDIR)/, $(SRCS:.c=.o))
 
-all: $(NAME)
+
+
+all: $(BUILDDIR) $(NAME)
+
+$(BUILDDIR):
+	@mkdir -p $(BUILDDIR)
 
 $(NAME): $(OBJS)
-	$(AR) rsc $(NAME) $?
+	$(AR) -rsc $(NAME) $(OBJS)
 
-%.c: %.o
-	$(CC) $(CFLAGS) -c $?
+$(BUILDDIR)/%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: $(OBJS)
-	rm -r $(OBJS)
+	rm -rf $(OBJS) $(BUILDDIR)
 
 fclean: clean
-	rm -r $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
