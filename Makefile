@@ -2,7 +2,7 @@ NAME = libftprintf.a
 BUILDDIR = build
 SRCS = \
 		ft_putchar.c	ft_putstr.c		ft_putnbr.c \
-		ft_printhex.c	ft_printf.c
+		ft_printhex.c	ft_printf.c		ft_printptr.c
 
 OBJS = $(addprefix $(BUILDDIR)/, $(SRCS:.c=.o))
 

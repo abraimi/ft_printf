@@ -6,7 +6,7 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 07:40:39 by abraimi           #+#    #+#             */
-/*   Updated: 2024/11/20 05:21:59 by abraimi          ###   ########.fr       */
+/*   Updated: 2024/11/20 07:09:04 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static size_t check_base(const char *base)
 	return (len);
 }
 
-void	ft_printhex(const char *base, unsigned int nbr)
+void	ft_printhex(const char *base, unsigned int nbr, size_t *count)
 {
 	size_t	radix;
 
@@ -59,7 +59,7 @@ void	ft_printhex(const char *base, unsigned int nbr)
 		return ;
 	while (nbr)
 	{
-		ft_putchar(base[nbr%radix]);
+		ft_putchar(base[nbr%radix], count);
 		nbr /= radix;
 	}
 }

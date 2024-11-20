@@ -6,13 +6,14 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 07:46:25 by abraimi           #+#    #+#             */
-/*   Updated: 2024/11/16 07:58:07 by abraimi          ###   ########.fr       */
+/*   Updated: 2024/11/20 07:10:59 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, size_t *count)
 {
 	write(1, &c, 1);
+	(*count)++;
 }
