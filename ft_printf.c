@@ -6,31 +6,20 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 04:57:56 by abraimi           #+#    #+#             */
-/*   Updated: 2024/11/20 07:30:30 by abraimi          ###   ########.fr       */
+/*   Updated: 2024/11/22 11:06:13 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-// static int	count_args(va_list cpy)
-// {
-// 	size_t	idx;
-
-// 	va_arg(cpy);
-// 	idx = 0;
-// 	while () {
-
-// 	}
-// }
-
 int ft_printf(const char *s, ...)
 {
 	va_list	args;
-	va_list	cpy;
 	size_t	count;
 
+	if (write(1, 0, 0) == -1)
+		return (-1);
 	va_start(args, s);
-	va_copy(cpy, args);
 	count = 0;
 	while (*s)
 	{
@@ -48,7 +37,9 @@ int ft_printf(const char *s, ...)
 			else if (*s == 'X')
 				ft_printhex("0123456789ABCDEF", va_arg(args, unsigned int), &count);
 			else if (*s == 'p')
-				ft_printptr(va_arg(args, unsigned int), &count);
+				ft_printptr(va_arg(args, unsigned long), &count);
+			else if (*s == 'u')
+				ft_putnbr_u(va_arg(args, unsigned int), &count);
 			else if (*s == '%')
 				ft_putchar('%', &count);
 		}
