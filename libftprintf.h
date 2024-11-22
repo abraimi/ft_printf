@@ -6,7 +6,7 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 07:41:50 by abraimi           #+#    #+#             */
-/*   Updated: 2024/11/22 12:25:55 by abraimi          ###   ########.fr       */
+/*   Updated: 2024/11/22 15:14:28 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int ft_printf(const char *s, ...);
+int		ft_printf(const char *s, ...);
 
 void	ft_putchar(char c, size_t *count);
 void	ft_putnbr(long nbr, size_t *count);
