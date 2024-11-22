@@ -34,8 +34,7 @@ int main()
 	// printf("\n");
 	// ft_printf("\n");
 	// printf("OG: %d\nME: %d", og, ft);
-	printf("%p\n", "");
-	ft_printf("%p", "");
 
+	ft_printf("%p", NULL);
 	return (0);
 }

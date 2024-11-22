@@ -6,19 +6,14 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 07:47:35 by abraimi           #+#    #+#             */
-/*   Updated: 2024/11/22 11:05:40 by abraimi          ###   ########.fr       */
+/*   Updated: 2024/11/22 12:26:50 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbr(int nbr, size_t *count)
+void	ft_putnbr(long nbr, size_t *count)
 {
-	if (nbr == -2147483648)
-	{
-		ft_putstr("-2147483648", count);
-		return ;
-	}
 	if (nbr < 0)
 	{
 		ft_putchar('-', count);
